@@ -16,15 +16,19 @@ function setup(){
   doodlejump.addImage("character",characterimg);
   doodlejump.scale=0.2;
 
-  if (keyDown('space')){
-    doodlejump.velocityY=-10;
-
-  }
+  ground=createSprite(450,480,900,5)
+ 
 }
 
 function draw(){
   background(backgroundimg);
  
+  if (keyDown('space')){
+    doodlejump.velocityY=-10;
+
+  }
+  doodlejump.velocityY+=0.8;
   
+  doodlejump.collide(ground);
 drawSprites()
 } 
